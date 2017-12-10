@@ -6,8 +6,7 @@ Video https://www.youtube.com/watch?v=zH_omFPqMO4
 #To Do
 
 - [ ] Main Menu 	(AANG)
-- [ ] Restart
-- [ ] Object Speed	
+- [ ] Restart	
 - [ ] Score		(FINO)
 - [ ] Game over		(FINO)
 - [ ] Sound

@@ -392,3 +392,8 @@
 	<string>
 	<vector>
 
+1512895243 source:g:\duty\pemrograman berorientasi objek\final project\gempbo\main.cpp
+	<SFML/Graphics.hpp>
+	<time.h>
+	<iostream>
+
