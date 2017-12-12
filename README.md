@@ -24,3 +24,5 @@ List Bug / Masalah :
 1.
 
 Semangat Gengs !!!
+
+Reference : https://www.youtube.com/watch?v=zH_omFPqMO4&t=28s
