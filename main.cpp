@@ -10,14 +10,14 @@ using namespace std;
 
 int MainMenuFunction();
 
-const int M=20;
-const int N=10;
+const int M=25;
+const int N=15;
 
 int field[M][N]={0};
-int main();
 
 struct point{
-    int x, y;} a[4],b[4];
+    int x, y;
+} a[4],b[4];
 
 int figures[7][4]={
     1,3,5,7, // I
@@ -45,12 +45,12 @@ int main(){
 
     if(MainMenuFunction()==0) return 0;
 
-	RenderWindow window(VideoMode(320, 480), "The Game!");
+	RenderWindow window(VideoMode(480, 600), "The Game!");
 
     Texture t1,t2,t3;
 	t1.loadFromFile("images/tiles.png");
-	t2.loadFromFile("images/background.png");
-	t3.loadFromFile("images/frame.png");
+	//t2.loadFromFile("images/background.png");
+	//t3.loadFromFile("images/frame.png");
 
 	Sprite s(t1);
 	Sprite background(t2);
@@ -69,6 +69,11 @@ int main(){
 		clock.restart();
 		timer+=time;
 
+		for (int i=0;i<4;i++) if (field[a[i].y][a[i].x]){       //cek batas / gameover
+            window.close();
+            MainMenuFunction();
+		};
+
         Event e;
         while (window.pollEvent(e))
         {
@@ -79,9 +84,8 @@ int main(){
 			  if (e.key.code==Keyboard::Up) rotate=true;
 			  else if (e.key.code==Keyboard::Left) dx=-1;
 			  else if (e.key.code==Keyboard::Right) dx=1;
-			  else if (e.key.code==Keyboard::Down) delay=0.05;
+			  else if (e.key.code==Keyboard::Down) delay=0.01;
 			  else if (e.key.code==Keyboard::Escape){
-                //MainMenuFunction();
                 if(pause) pause=false;
                 else pause=true;
 			  }
@@ -116,9 +120,11 @@ int main(){
             }
         }
 
+
 	///////Tick//////
 	if (timer>delay)
 	  {
+        //printf("timer %d delay %d\n",timer, delay);
 	    if(!pause) for (int i=0;i<4;i++){
             b[i]=a[i];
             a[i].y+=1;
@@ -126,7 +132,10 @@ int main(){
 
 		if (!check())
 		{
-		 for (int i=0;i<4;i++) field[b[i].y][b[i].x]=colorNum;
+		 for (int i=0;i<4;i++){
+            field[b[i].y][b[i].x]=colorNum;
+            //cout<< field[b[i].y][b[i].x]<<endl;
+		 }
 
 		 colorNum=1+rand()%7;
 		 int n=rand()%7;
@@ -134,8 +143,10 @@ int main(){
 
 		 for (int i=0;i<4;i++)
 		   {
-		    a[i].x = figures[n][i] % 2;
-		    a[i].y = figures[n][i] / 2;
+		    a[i].x = figures[n][i] % 2;         //mengconvert posisis figures ke koordinat x
+		    a[i].y = figures[n][i] / 2;         //mengconvert posisis figures ke koordinat y
+		    //cout<<"a.x "<<a[i].x<<endl;
+		    //cout<<"a.y "<<a[i].y<<endl;
 		   }
 		}
 
@@ -162,13 +173,12 @@ int main(){
     window.draw(background);
 
 	for (int i=0;i<M;i++)
-	 for (int j=0;j<N;j++)
-	   {
-         if (field[i][j]==0) continue;
-		 s.setTextureRect(IntRect(field[i][j]*18,0,18,18));
-		   s.setPosition(j*18,i*18);
-		 s.move(28,31); //offset
-		 window.draw(s);
+    for (int j=0;j<N;j++){
+        if (field[i][j]==0) continue;
+        s.setTextureRect(IntRect(field[i][j]*18,0,18,18));
+        s.setPosition(j*18,i*18);
+        s.move(28,31); //offset
+        window.draw(s);
 	   }
 
 	for (int i=0;i<4;i++)
@@ -188,7 +198,7 @@ int main(){
 
 int MainMenuFunction()
 {
-	sf::RenderWindow window(sf::VideoMode(600, 600), "TETRYSSS !!!");
+	sf::RenderWindow window(sf::VideoMode(480, 600), "TETRYSSS !!!");
 	MainMenu menu(window.getSize().x, window.getSize().y);
 	while (window.isOpen())
 	{
