@@ -95,7 +95,7 @@ int main(){
         if (rotate){
             if (check()){
                 cout<<"rotate"<<endl;
-                Point p = a[2];     //center of rotation
+                point p = a[2];     //center of rotation
                 for (int i=0;i<4;i++){
                     int x = a[i].y-p.y;
                     int y = a[i].x-p.x;
@@ -194,11 +194,11 @@ void MainMenuFunction()
 				switch (event.key.code)
 				{
 				case sf::Keyboard::Up:
-					MainMenu.MoveUp();
+					menu.MoveUp();
 					break;
 
 				case sf::Keyboard::Down:
-					MainMenu.MoveDown();
+					menu.MoveDown();
 					break;
 
 				case sf::Keyboard::Return:

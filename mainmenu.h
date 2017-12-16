@@ -1,9 +1,8 @@
 #ifndef MAINMENU_H
 #define MAINMENU_H
-#include "SFML/Graphics.hpp"
+#include <SFML/Graphics.hpp>
 
 #define MAX_NUMBER_OF_ITEMS 2
-
 
 class MainMenu
 {
