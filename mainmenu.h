@@ -13,7 +13,7 @@ class mainmenu
         void layout(sf::RenderWindow &window);
         void gerakatas();
         void gerakbawah();
-        void GetSelectedItem ( return SelectedItemIndex);
+        int GetSelectedItem ();
     protected:
 
     private:

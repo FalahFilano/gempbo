@@ -64,4 +64,8 @@ void mainmenu::gerakbawah()
 		menu[selectedItemIndex].setColor(sf::Color::Cyan);
 	}
 }
+int mainmenu::GetSelectedItem()
+{
+    return this->selectedItemIndex;
+}
 
