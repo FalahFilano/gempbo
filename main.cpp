@@ -43,7 +43,7 @@ int main(){
 
     srand(time(0));
 
-    MainMenuFunction();
+    if(MainMenuFunction()==0) return 0;
 
 	RenderWindow window(VideoMode(320, 480), "The Game!");
 
@@ -81,6 +81,7 @@ int main(){
 			  else if (e.key.code==Keyboard::Right) dx=1;
 			  else if (e.key.code==Keyboard::Down) delay=0.05;
 			  else if (e.key.code==Keyboard::Escape){
+                //MainMenuFunction();
                 if(pause) pause=false;
                 else pause=true;
 			  }
@@ -211,13 +212,16 @@ int MainMenuFunction()
 					switch (menu.GetPressedItem())
 					{
 					case 0:
-                       window.clear();
-						window.close();
-						break;
-					case 1:
+					    cout<<"main"<<endl;
                         window.clear();
 						window.close();
-						main();
+						return 1;
+						break;
+					case 1:
+					    cout<<"keluar"<<endl;
+                        window.clear();
+						window.close();
+						return 0;
 						break;
 					}
 
