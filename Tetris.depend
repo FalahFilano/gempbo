@@ -509,3 +509,17 @@
 1513430418 source:g:\duty\pemrograman berorientasi objek\final project\gempbo\mainmenu.cpp
 	"MainMenu.h"
 
+1513434642 source:d:\ryan\fp pbo\gempbo\mainmenu.cpp
+	"MainMenu.h"
+
+1513434567 d:\ryan\fp pbo\gempbo\mainmenu.h
+	"SFML/Graphics.hpp"
+
+1513435195 source:d:\ryan\fp pbo\gempbo\main.cpp
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<time.h>
+	<iostream>
+	<cstring>
+	"mainmenu.h"
+

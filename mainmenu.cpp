@@ -32,6 +32,8 @@ MainMenu::MainMenu(float width, float height)
 	menu[1].setColor(sf::Color::White);
 	menu[1].setString("Exit To Desktop");
 	menu[1].setPosition(sf::Vector2f(width / 2, height / (MAX_NUMBER_OF_ITEMS + 1) * 2));
+
+	selectedItemIndex = 0;
 }
 
 void MainMenu::draw(sf::RenderWindow& window)

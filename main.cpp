@@ -8,6 +8,8 @@
 using namespace sf;
 using namespace std;
 
+int MainMenuFunction();
+
 const int M=20;
 const int N=10;
 
@@ -36,60 +38,12 @@ bool check()            //mengecek batas
    return 1;
 };
 
-void MainMenuFunction()
-{
-	sf::RenderWindow window(sf::VideoMode(600, 600), "TETYSSS !!!");
-	MainMenu menu(window.getSize().x, window.getSize().y);
-	while (window.isOpen())
-	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			switch (event.type)
-			{
-			case sf::Event::KeyReleased:
-				switch (event.key.code)
-				{
-				case sf::Keyboard::Up:
-					menu.MoveUp();
-					break;
-
-				case sf::Keyboard::Down:
-					menu.MoveDown();
-					break;
-
-				case sf::Keyboard::Return:
-					switch (menu.GetPressedItem())
-					{
-					case 0:
-                        cout << "Play has been pressed" << endl;
-						break;
-					case 1:
-						window.close();
-						break;
-					}
-
-					break;
-				}
-
-				break;
-                case sf::Event::Closed:
-				window.close();
-
-				break;
-
-			}
-		}
-
-		window.clear();
-		menu.draw(window);
-		window.display();
-	}
-}
 
 int main(){
 
     srand(time(0));
+
+    MainMenuFunction();
 
 	RenderWindow window(VideoMode(320, 480), "The Game!");
 
@@ -229,6 +183,60 @@ int main(){
 	}
 
     return 0;
+}
+
+int MainMenuFunction()
+{
+	sf::RenderWindow window(sf::VideoMode(600, 600), "TETRYSSS !!!");
+	MainMenu menu(window.getSize().x, window.getSize().y);
+	while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			switch (event.type)
+			{
+			case sf::Event::KeyReleased:
+				switch (event.key.code)
+				{
+				case sf::Keyboard::Up:
+					menu.MoveUp();
+					break;
+
+				case sf::Keyboard::Down:
+					menu.MoveDown();
+					break;
+
+				case sf::Keyboard::Return:
+					switch (menu.GetPressedItem())
+					{
+					case 0:
+                       window.clear();
+						window.close();
+						break;
+					case 1:
+                        window.clear();
+						window.close();
+						main();
+						break;
+					}
+
+					break;
+				}
+
+				break;
+                case sf::Event::Closed:
+				window.close();
+
+				break;
+
+			}
+		}
+
+		window.clear();
+		menu.draw(window);
+		window.display();
+	}
 }
 
 
