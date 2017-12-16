@@ -7,7 +7,7 @@ mainmenu::~mainmenu()
 }
 
 
-mainmenu::mainmenu(float width, float weight)
+mainmenu::mainmenu(float width, float height)
 {
     if(!font.loadFromFile("Gotham-Medium.ots"))
             imageSprite.setTexture(texture);
@@ -23,12 +23,12 @@ mainmenu::mainmenu(float width, float weight)
 	menu[0].setFont(font);
 	menu[0].setColor(sf::Color::Cyan);
 	menu[0].setString("Play The Game");
-    menu[0].setPosition(sf::Vector2f(w/2,h/(MAX_NUMBER_OF_ITEMS+1)*1));
+    menu[0].setPosition(sf::Vector2f(width/2,height/(MAX_NUMBER_OF_ITEMS+1)*1));
 
     menu[1].setFont(font);
     menu[1].setColor(sf::Color::White);
     menu[1].setString("Exit To Desktop");
-    menu[1].setPosition(sf::Vector2f(w/2,h/(MAX_NUMBER_OF_ITEMS+1)*2));
+    menu[1].setPosition(sf::Vector2f(width/2,height/(MAX_NUMBER_OF_ITEMS+1)*2));
 
     selectedItemIndex = 0;
 

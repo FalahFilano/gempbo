@@ -2,12 +2,12 @@
 #define MAINMENU_H
 
 #include <SFML/Graphics.hpp>
-#define MAX_NUMBER_OF_ITEMS 2
+#define MAX_NUMBER_OF_ITEMS 3
 
 class mainmenu
 {
     public:
-        mainmenu(float width, float weight);
+        mainmenu(float width, float height);
         virtual ~mainmenu();
 
         void layout(sf::RenderWindow &window);
