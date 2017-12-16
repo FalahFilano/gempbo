@@ -392,7 +392,7 @@
 	<string>
 	<vector>
 
-1513431398 source:g:\duty\pemrograman berorientasi objek\final project\gempbo\main.cpp
+1513436626 source:g:\duty\pemrograman berorientasi objek\final project\gempbo\main.cpp
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<time.h>
@@ -503,10 +503,10 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1513431124 g:\duty\pemrograman berorientasi objek\final project\gempbo\mainmenu.h
-	<SFML/Graphics.hpp>
+1513434567 g:\duty\pemrograman berorientasi objek\final project\gempbo\mainmenu.h
+	"SFML/Graphics.hpp"
 
-1513430418 source:g:\duty\pemrograman berorientasi objek\final project\gempbo\mainmenu.cpp
+1513434642 source:g:\duty\pemrograman berorientasi objek\final project\gempbo\mainmenu.cpp
 	"MainMenu.h"
 
 1513434642 source:d:\ryan\fp pbo\gempbo\mainmenu.cpp
@@ -522,4 +522,10 @@
 	<iostream>
 	<cstring>
 	"mainmenu.h"
+
+1513436799 source:g:\duty\pemrograman berorientasi objek\final project\gempbo\src\mainmenu.cpp
+	"MainMenu.h"
+
+1513436800 g:\duty\pemrograman berorientasi objek\final project\gempbo\include\mainmenu.h
+	"SFML/Graphics.hpp"
 
