@@ -74,6 +74,7 @@ int main(){
 		for (int i=0;i<4;i++) if (field[a[i].y][a[i].x]){       //cek batas / gameover
             window.close();
             MainMenuFunction();
+            break;
 		};
 
         Event e;
@@ -88,13 +89,9 @@ int main(){
 			  else if (e.key.code==Keyboard::Right) dx=1;
 			  else if (e.key.code==Keyboard::Down) delay=0.01;
 			  else if (e.key.code==Keyboard::Escape){
-                if(pause){
-                        PauseMenuFunction();
+                    pause=true;
+                    PauseMenuFunction();
                     pause=false;
-
-                }
-
-                else pause=true;
 			  }
 		}
 
@@ -150,8 +147,8 @@ int main(){
 
 		 for (int i=0;i<4;i++)
 		   {
-		    a[i].x = figures[n][i] % 2;         //mengconvert posisis figures ke koordinat x
-		    a[i].y = figures[n][i] / 2;         //mengconvert posisis figures ke koordinat y
+		    a[i].x = figures[n][i] % 2;         //mengconvert posisi figures ke koordinat x
+		    a[i].y = figures[n][i] / 2;         //mengconvert posisi figures ke koordinat y
 		    //cout<<"a.x "<<a[i].x<<endl;
 		    //cout<<"a.y "<<a[i].y<<endl;
 		   }

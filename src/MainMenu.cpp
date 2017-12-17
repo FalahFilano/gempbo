@@ -1,7 +1,5 @@
 #include "MainMenu.h"
 
-
-
 MainMenu::~MainMenu()
 {
     //dtor
