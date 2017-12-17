@@ -5,10 +5,12 @@
 #include <cstring>
 
 #include "mainmenu.h"
+#include "PauseMenu.h"
 using namespace sf;
 using namespace std;
 
 int MainMenuFunction();
+int PauseMenuFunction();
 
 const int M=25;
 const int N=15;
@@ -86,7 +88,12 @@ int main(){
 			  else if (e.key.code==Keyboard::Right) dx=1;
 			  else if (e.key.code==Keyboard::Down) delay=0.01;
 			  else if (e.key.code==Keyboard::Escape){
-                if(pause) pause=false;
+                if(pause){
+                        PauseMenuFunction();
+                    pause=false;
+
+                }
+
                 else pause=true;
 			  }
 		}
@@ -249,6 +256,63 @@ int MainMenuFunction()
 
 		window.clear();
 		menu.draw(window);
+		window.display();
+	}
+}
+
+int PauseMenuFunction()
+{
+    sf::RenderWindow window(sf::VideoMode(480, 600), "TETRYSSS !!!");
+	PauseMenu pause(window.getSize().x, window.getSize().y);
+	while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			switch (event.type)
+			{
+			case sf::Event::KeyReleased:
+				switch (event.key.code)
+				{
+				case sf::Keyboard::Up:
+					pause.MoveUp1();
+					break;
+
+				case sf::Keyboard::Down:
+					pause.MoveUp2();
+					break;
+
+				case sf::Keyboard::Return:
+					switch (pause.GetPressedItem1())
+					{
+					case 0:
+					    cout<<"main"<<endl;
+                        window.clear();
+						window.close();
+						return 1;
+						break;
+					case 1:
+					    cout<<"keluar"<<endl;
+                        window.clear();
+						window.close();
+						return 0;
+						break;
+					}
+
+					break;
+				}
+
+				break;
+                case sf::Event::Closed:
+				window.close();
+
+				break;
+
+			}
+		}
+
+		window.clear();
+		pause.draw1(window);
 		window.display();
 	}
 }

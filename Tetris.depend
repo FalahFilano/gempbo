@@ -512,20 +512,33 @@
 1513434642 source:d:\ryan\fp pbo\gempbo\mainmenu.cpp
 	"MainMenu.h"
 
-1513434567 d:\ryan\fp pbo\gempbo\mainmenu.h
+1513439296 d:\ryan\fp pbo\gempbo\mainmenu.h
 	"SFML/Graphics.hpp"
 
-1513435195 source:d:\ryan\fp pbo\gempbo\main.cpp
+1513488690 source:d:\ryan\fp pbo\gempbo\main.cpp
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<time.h>
 	<iostream>
 	<cstring>
 	"mainmenu.h"
+	"PauseMenu.h"
 
 1513436799 source:g:\duty\pemrograman berorientasi objek\final project\gempbo\src\mainmenu.cpp
 	"MainMenu.h"
 
 1513436800 g:\duty\pemrograman berorientasi objek\final project\gempbo\include\mainmenu.h
 	"SFML/Graphics.hpp"
+
+1513439296 source:d:\ryan\fp pbo\gempbo\src\mainmenu.cpp
+	"MainMenu.h"
+
+1513439296 d:\ryan\fp pbo\gempbo\include\mainmenu.h
+	"SFML/Graphics.hpp"
+
+1513488653 d:\ryan\fp pbo\gempbo\include\pausemenu.h
+	"SFML/Graphics.hpp"
+
+1513488833 source:d:\ryan\fp pbo\gempbo\src\pausemenu.cpp
+	"PauseMenu.h"
 

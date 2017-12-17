@@ -42,8 +42,10 @@
 			<Add directory="C:/Program Files (x86)/CodeBlocks/SFML/lib" />
 		</Linker>
 		<Unit filename="include/MainMenu.h" />
+		<Unit filename="include/PauseMenu.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/MainMenu.cpp" />
+		<Unit filename="src/PauseMenu.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
